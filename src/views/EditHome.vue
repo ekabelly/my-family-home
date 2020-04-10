@@ -1,11 +1,12 @@
 <template>
   <div class="edit-home flex align-center">
-    <div class="background">
+    <div class="backgroundInput" >
       <UploadFile
         customKey="backgroundInput"
         ref="backgroundInput"
         @file="setHome('background', $event)"
       />
+
       <img
         @click="onAssetClick('backgroundInput')"
         v-if="!home.background"
@@ -13,6 +14,7 @@
         class="home-background"
         alt=""
       />
+
       <img
         v-if="home.background"
         :src="home.background"
@@ -20,22 +22,26 @@
         alt=""
       />
     </div>
+
     <div
       @click="
         onBackgroundClick($event.target, 'home-background', 'backgroundInput')
       "
       class="home home-background background flex flex-column justify-end"
     >
+
       <div class="roof flex justify-center">
         <!-- ROOF -->
         <div class="bird">
           <img src="@/assets/img/bird.png" alt="" />
         </div>
+
         <UploadFile
           customKey="roofInput"
           ref="roofInput"
           @file="setHome('roof', $event)"
         />
+
         <img
           @click="onAssetClick('roofInput')"
           v-if="!home.roof"
@@ -43,6 +49,7 @@
           src="@/assets/img/roof.png"
           alt=""
         />
+
         <img
           @click="onAssetClick('roofInput')"
           v-if="home.roof"
@@ -50,6 +57,7 @@
           :src="home.roof"
           alt
         />
+
         <div
           v-if="home.windows"
           class="roof-windows background windows-container flex space-around"
@@ -57,68 +65,80 @@
             onBackgroundClick($event.target, 'windows-container', 'roofInput')
           "
         >
+
           <div class="window window-8" v-if="home.windows.window5">
             <UploadFile
               @file="setWindow('window5', $event)"
               customKey="window5"
               ref="window5"
             />
+
             <img
               v-if="!home.windows['window5'].pic"
               @click="onWindowClick('window5')"
               src="@/assets/img/window.png"
               alt=""
             />
+
             <img
               v-if="home.windows['window5'].pic"
               @click="onWindowClick('window5')"
               :src="home.windows['window5'].pic"
               alt=""
             />
+
             <div v-if="home.windows.window5" class="window-name">
               {{ home.windows.window5.name }}
             </div>
           </div>
+          
           <div class="window window-6" v-if="home.windows.window6">
             <UploadFile
               @file="setWindow('window6', $event)"
               customKey="window6"
               ref="window6"
             />
+
             <img
               v-if="!home.windows['window6'].pic"
               @click="onWindowClick('window6')"
               src="@/assets/img/window.png"
               alt=""
             />
+
             <img
               v-if="home.windows['window6'].pic"
               @click="onWindowClick('window6')"
               :src="home.windows['window6'].pic"
               alt=""
             />
+
             <div v-if="home.windows.window6" class="window-name">
               {{ home.windows.window6.name }}
             </div>
           </div>
+          
           <div class="window window-7" v-if="home.windows.window7">
             <UploadFile
               @file="setWindow('window7', $event)"
               customKey="window7"
               ref="window7"
             />
+            
             <img
               v-if="!home.windows['window7'].pic"
               @click="onWindowClick('window7')"
               src="@/assets/img/window.png"
               alt=""
             />
+
             <img
               v-if="home.windows['window7'].pic"
               @click="onWindowClick('window7')"
               :src="home.windows['window7'].pic"
               alt=""
             />
+            
             <div v-if="home.windows.window7" class="window-name">
               {{ home.windows.window7.name }}
             </div>
@@ -143,6 +163,7 @@
           />
         </svg> -->
       </div>
+     
       <div class="wall flex justify-center">
         <!-- WALL -->
         <div
@@ -158,21 +179,25 @@
               customKey="window1"
               ref="window1"
             />
+            
             <img
               v-if="!home.windows.window1.pic"
               @click="onWindowClick('window1')"
               src="@/assets/img/window.png"
               alt=""
             />
+            
             <img
               v-if="home.windows['window1'].pic"
               @click="onWindowClick('window1')"
               :src="home.windows['window1'].pic"
               alt=""
             />
+            
             <div v-if="home.windows.window1" class="window-name">
               {{ home.windows.window1.name }}
             </div>
+          
           </div>
           <div class="window window-1" v-if="home.windows.window0">
             <UploadFile
@@ -180,45 +205,53 @@
               customKey="window0"
               ref="window0"
             />
+            
             <img
               v-if="!home.windows['window0'].pic"
               @click="onWindowClick('window0')"
               src="@/assets/img/window.png"
               alt=""
             />
+            
             <img
               v-if="home.windows.window0.pic"
               @click="onWindowClick('window0')"
               :src="home.windows.window0.pic"
               alt=""
             />
+            
             <div v-if="home.windows.window0" class="window-name">
               {{ home.windows.window0.name }}
             </div>
           </div>
+          
           <div class="window window-3" v-if="home.windows.window2">
             <UploadFile
               @file="setWindow('window2', $event)"
               customKey="window2"
               ref="window2"
             />
+            
             <img
               v-if="!home.windows.window2.pic"
               @click="onWindowClick('window2')"
               src="@/assets/img/window.png"
               alt=""
             />
+            
             <img
               v-if="home.windows.window2.pic"
               @click="onWindowClick('window2')"
               :src="home.windows.window2.pic"
               alt=""
             />
+            
             <div v-if="home.windows.window2" class="window-name">
               {{ home.windows.window2.name }}
             </div>
           </div>
         </div>
+        
         <div
           v-if="home.windows"
           class="wall-windows bottom windows-container flex space-between"
@@ -232,40 +265,47 @@
               customKey="window3"
               ref="window3"
             />
+            
             <img
               v-if="!home.windows['window3'].pic"
               @click="onWindowClick('window3')"
               src="@/assets/img/window.png"
               alt=""
             />
+            
             <img
               v-if="home.windows['window3'].pic"
               @click="onWindowClick('window3')"
               :src="home.windows['window3'].pic"
               alt=""
             />
+            
             <div v-if="home.windows.window3" class="window-name">
               {{ home.windows.window3.name }}
             </div>
           </div>
+          
           <div class="window window-5" v-if="home.windows.window4">
             <UploadFile
               @file="setWindow('window4', $event)"
               customKey="window4"
               ref="window4"
             />
+            
             <img
               v-if="!home.windows.window4.pic"
               @click="onWindowClick('window4')"
               src="@/assets/img/window.png"
               alt=""
             />
+            
             <img
               v-if="home.windows.window4.pic"
               @click="onWindowClick('window4')"
               :src="home.windows.window4.pic"
               alt=""
             />
+            
             <div v-if="home.windows.window4" class="window-name">
               {{ home.windows.window4.name }}
             </div>
@@ -276,6 +316,7 @@
           ref="wallInput"
           @file="setHome('wall', $event)"
         />
+        
         <img
           @click="onAssetClick('wallInput')"
           v-if="!home.wall"
@@ -283,6 +324,7 @@
           src="@/assets/img/wall.png"
           alt=""
         />
+        
         <img
           @click="onAssetClick('wallInput')"
           v-if="home.wall"
@@ -290,42 +332,49 @@
           :src="home.wall"
           alt=""
         />
+        
         <div class="door flex align-center">
           <!-- DOOR -->
           <UploadFile
-            customKey="doorInuput"
-            ref="doorInuput"
+            customKey="doorInput"
+            ref="doorInput"
             @file="setHome('door', $event)"
           />
           <!-- <img class="door-pic" src="@/assets/img/door.png" alt="" /> -->
           <img
-            @click="onAssetClick('doorInuput')"
+            @click="onAssetClick('doorInput')"
             v-if="!home.door"
             class="door-pic"
             src="@/assets/img/door.png"
             alt=""
           />
+          
           <img
-            @click="onAssetClick('doorInuput')"
+            @click="onAssetClick('doorInput')"
             v-if="home.door"
             class="door-pic"
             :src="home.door"
             alt=""
           />
+          
           <div class="door-sign" @click="onSignClick">
             <div class="text">
               <div class="belongs-to">
                 הבית של
               </div>
+              
               <div class="name">
                 {{ home.name || 'הקלד טקסט' }}
               </div>
             </div>
+            
             <img class="sign" src="@/assets/img/sign.png" alt="" />
           </div>
+          
           <img class="door-knob" src="@/assets/img/doorknob.png" alt="" />
         </div>
       </div>
+      
       <div class="home-footer">
         <img
           @click="onMailBoxClick"
@@ -333,14 +382,16 @@
           src="@/assets/img/mailbox.png"
           alt=""
         />
+        
         <img class="grass-pic" src="@/assets/img/urban.png" alt="" />
       </div>
     </div>
+    
     <AppDialog ref="familyNumDialog">
       <div class="div">
         <input
           class="windows-num-input"
-          placeholder="הקלד טקסט"
+          placeholder="הקלד מספר דיירים"
           type="number"
           v-model="windowsNum"
           min="1"
@@ -348,6 +399,7 @@
         />
       </div>
     </AppDialog>
+
     <AppDialog ref="windowsDialog">
       <div class="windows-dialog">
         <div
@@ -368,15 +420,18 @@
               :value="home.windows[selectedWindow].name"
             />
           </div>
+          
           <div class="window-name-btns">
             <div class="p">
               הוסיפו גם תמונה,<br />
               שנוכל להכיר אותו טוב יותר :)
             </div>
+            
             <div class="btns-images flex space-between">
               <div v-if="getWindowsNum() > 1">
                 <img @click="removeWindow" src="@/assets/img/bin.png" alt="" />
               </div>
+              
               <div v-if="canAddWindow()">
                 <img
                   src="@/assets/img/add-window.png"
@@ -384,6 +439,7 @@
                   alt=""
                 />
               </div>
+              
               <div>
                 <img
                   v-if="!home.windows[selectedWindow].pic"
@@ -391,6 +447,7 @@
                   src="@/assets/img/gallery.png"
                   alt=""
                 />
+                
                 <img
                   v-if="home.windows[selectedWindow].pic"
                   @click="onAssetClick(selectedWindow)"
@@ -408,6 +465,7 @@
             </div>
           </div>
         </div>
+        
         <div
           class="step2"
           v-if="dialogStep === 2 && home && home.windows && selectedWindow"
@@ -419,6 +477,7 @@
             @input="setWindowProperty('question', $event.target.value)"
             :value="home.windows[selectedWindow].question"
           />
+         
           <div class="answers">
             <div
               v-for="(answer, index) of home.windows[selectedWindow].answers"
@@ -448,6 +507,7 @@
           src="@/assets/img/x-button.png"
           alt=""
         />
+        
         <img
           class="agree"
           @click="setDialogStep"
@@ -457,6 +517,7 @@
         <!-- </div> -->
       </div>
     </AppDialog>
+    
     <AppDialog ref="familyNameDialog">
       <div class="family-name-dialog">
         <img src="@/assets/img/lightbox-sign.png" alt="" />
@@ -469,14 +530,17 @@
         />
       </div>
     </AppDialog>
+    
     <AppDialog ref="letterDialog">
       <div class="letter-dialog">
         <img class="letter" src="@/assets/img/letter.png" alt="" />
+        
         <UploadFile
           customKey="familyCrest"
           ref="familyCrest"
           @file="setHome('familyCrest', $event)"
         />
+        
         <img
           @click="onAssetClick('familyCrest')"
           v-if="!home.familyCrest"
@@ -484,6 +548,7 @@
           src="@/assets/img/gallery.png"
           alt=""
         />
+       
         <img
           @click="onAssetClick('familyCrest')"
           v-if="home.familyCrest"
@@ -493,6 +558,42 @@
         />
       </div>
     </AppDialog>
+
+    <AppDialog ref="homeDesignDialog">
+      <div class="home-design-lightbox">
+        <div class="p">
+          אגב,
+          <br/>
+          גם את הרקע אתם יכולים לעצב:)
+        </div>
+        
+        <div class="btns-images flex space-between">
+          <div></div>
+          
+          <div>  
+            <img
+              v-if="!home[selectedBackground]"
+              @click="editBackground(selectedBackground)"
+              class="gallery-img"
+              src="@/assets/img/gallery.png"
+              alt=""
+            />
+
+            <img
+              v-if="home[selectedBackground]"
+              @click="editBackground(selectedBackground)"
+              class="gallery-img"
+              :src="home[selectedBackground]"
+              alt=""
+            />
+          </div>
+
+          <div></div>
+        </div>
+      </div>
+
+    </AppDialog>
+    
   </div>
 </template>
 
@@ -541,6 +642,7 @@ export default {
       windowsNum: null,
       interval: null,
       selectedWindow: null,
+      selectedBackground: null,
       dialogStep: 1,
       mailWasNotified: false
     };
@@ -558,11 +660,12 @@ export default {
       if (this.$refs.familyNumDialog) {
         clearInterval(this.interval);
         if (!this.home.windows) {
+          await this.$refs.familyNameDialog.open({ content: ' ' });
           await this.$refs.familyNumDialog.open({
             title: 'כמה אתם במשפחה?',
             content: 'גם חיות מחמד הם משפחה :)'
           });
-          this.setHome('windows', this.createWindowsObj());
+          this.setHome('windows', this.createWindowsObj())
         }
       }
     },
@@ -610,17 +713,32 @@ export default {
       windows[windowIndex].pic = pic;
       this.setHome('windows', windows);
     },
-    onAssetClick(assetName) {
-      if (this.$refs[assetName]) {
+    onAssetClick(assetName) {      
+      if(assetName === 'roofInput' || assetName === 'wallInput' || assetName === 'doorInput') {
+        const newName = assetName === 'roofInput' ? 'roof' : (assetName === 'wallInput' ? 'wall' : 'door')
+        this.selectedBackground = newName
+        this.$refs.homeDesignDialog.open({
+            title: 'בואו תעצבו את הבית שלכם!',
+            content: 'בחרו את התמונות שימלאו את הדלת, הגג וקיר חזית הבית.'
+        })
+      }
+      else if (this.$refs[assetName]) {
         this.$refs[assetName].onFileUploadClick();
       }
+  
     },
     onBackgroundClick(clickTarget, containerName, realTarget) {
-      if (
-        clickTarget.classList &&
-        clickTarget.classList.contains(containerName)
-      ) {
-        this.onAssetClick(realTarget);
+        if (
+          clickTarget.classList &&
+          clickTarget.classList.contains(containerName)
+        ) {
+            this.onAssetClick(realTarget);
+        } 
+    },
+    editBackground(backgroundName) {
+      const inp = `${backgroundName}Input`
+      if (this.$refs[inp]) {
+        this.$refs[inp].onFileUploadClick();
       }
     },
     getPic(pic) {
@@ -708,6 +826,8 @@ export default {
       this.dialogStep = 1;
       this.$refs.windowsDialog.decline();
     }
+    // v-if="!home.windows[selectedWindow].pic"
+    //       @click="onAssetClick(selectedWindow)"
   }
 };
 </script>
@@ -936,6 +1056,22 @@ export default {
     direction: ltr;
     margin: 10px;
     // justify-content: space-between;
+    div {
+      display: flex;
+      align-items: center;
+      max-width: 15%;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.home-design-lightbox {
+  .btns-images {
+    direction: ltr;
+    margin: 10px;
+    justify-content: center;
     div {
       display: flex;
       align-items: center;
